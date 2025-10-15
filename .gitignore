@@ -1,0 +1,54 @@
+# Qt Creator / CMake build artifacts
+build/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+*.moc
+*.obj
+*.o
+*.exe
+*.dll
+*.pdb
+*.log
+
+# Qt UI / Meta-Object Compiler
+*.qmlc
+*.rcc
+
+# Qt Designer
+*.ui.user
+*.pro.user
+*.pro.user.*
+*.qbs.user
+
+# Qt Creator project files
+*.creator
+*.creator.*
+*.includes
+*.layout
+*.autosave
+*.user
+*.user.* 
+
+# Backup files
+*~
+*.bak
+*.swp
+*.tmp
+
+# Visual Studio specific (if using VS with Qt)
+*.sdf
+*.ipch
+*.opensdf
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj.*
+
+# Mac specific (optional)
+.DS_Store
+
+# Windows Thumbs.db
+Thumbs.db
