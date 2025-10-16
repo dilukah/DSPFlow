@@ -1,0 +1,36 @@
+name: Windows CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Install Qt on Windows
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '6.8.0'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win64_msvc2022_64'
+
+      # Configure CMake
+      - name: Configure project
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+
+      # Build using MSVC
+      - name: Build
+        run: cmake --build build --config Release
+
+      # Run tests
+      - name: Run tests
+        run: |
+          cd build
+          ctest -C Release --output-on-failure
